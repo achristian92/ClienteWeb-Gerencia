@@ -3,10 +3,7 @@
 @section('content')
 <script type="text/javascript">
     $(document).ready(function() {
-  $('#example').DataTable({
-    "language": {
-      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-    }
+  $('#tablausers').DataTable({
   });
 });
 </script>
@@ -35,7 +32,7 @@
             <img height="25" id="imgexcel" onclick="funcione()" src="http://icons.iconarchive.com/icons/blackvariant/button-ui-ms-office-2016/256/Excel-2-icon.png" style="cursor: pointer" width="25"/>
         </span>
         <div class="col-xs-12">
-            <table cellspacing="0" class="display table table-bordered table-hover dt-responsive" id="tablagerencia" style="font-family: Helvetica,Arial,sans-serif; width: 100%; max-width: 100%">
+            <table cellspacing="0" class="display table table-bordered table-hover dt-responsive" id="tablausers" style="font-family: Helvetica,Arial,sans-serif; width: 100%; max-width: 100%">
                 <caption class="text-center">
                 </caption>
                 <thead>
