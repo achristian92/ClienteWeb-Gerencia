@@ -1,0 +1,128 @@
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+
+        color: white;
+    font-family: calibri;
+    font-weight: bold;
+    letter-spacing: 0.5px
+}
+
+body{
+background-color:#fff
+}
+
+    nav.navbar.navbar-default{
+        background-color: rgb(3,133,45);
+        margin-bottom: -21px;
+        padding: none;
+        border-radius: 0px;
+        border-color:  #4a9263;
+    }
+
+    ul.nav.navbar-nav{
+        float: right;
+    }
+
+
+    .presentacion{
+           /* background: url("../img/imagenfondo.png");*/
+             background-size: auto;
+             padding-bottom: 12vh;
+             background-size: 100%
+        }
+
+        h1{
+            color: black;
+            font-weight: bold;
+            letter-spacing: 3px;
+            padding-top: 15PX;
+            padding-bottom: 20PX;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+        }
+
+        h3{
+            color: black;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            text-align: center;
+            padding-right: 20px;
+            padding-left: 20px;
+            padding-top: 10px;
+            padding-bottom: 45px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 30px;
+        }
+
+
+
+        .botoningreso{
+           
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 50px
+            
+        }
+
+        #btningreso{
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+        }
+
+        .btn{
+            padding: 10px 25px
+        }
+
+        footer{
+            text-align: center;
+            position: relative;
+            bottom: 0;            
+            padding-top: 7px;
+            padding-bottom: 7px;
+           
+        }
+
+        p{
+           color: black
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px
+        }
+
+        h4{
+            color: black
+        }
+
+        .subtextop{
+            font-weight: bold;
+        }
+
+        .descri{
+            line-height: 1.5;
+        }
+
+        #primerp{
+            padding-bottom: 20px;
+        }
+
+.btn-primary, .btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.btn-primary.dropdown-toggle, .btn-primary.focus, .btn-primary:focus, .btn-primary:active:focus{
+    background-color: #03852d;
+    border-color: #03852d;
+}
+
+#imagenlogomb{
+    width: 85%;
+    height: auto;
+}
+
+.pie{
+            font-weight: bold
+}
+
+.linkminkay{
+color: #4c4c4c;
+}
+
+.linkminkay:hover{
+color: #5d5dff;
+}
