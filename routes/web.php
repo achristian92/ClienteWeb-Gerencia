@@ -17,8 +17,8 @@ Route::get('/', function () {
 	// $usu->name="alan";
 	// $usu->apellidos="ruiz";
 	// $usu->telefono="123456";
-	// $usu->email="alan@gmail.com";
-	// $usu->password=bcrypt('alan');
+	// $usu->email="jose@minkay.com.pe";
+	// $usu->password=bcrypt('jose123');
 	// $usu->accesoWeb="1";
 	// $usu->accesoApp="1";
 	// $usu->save();
