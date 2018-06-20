@@ -10,8 +10,8 @@ class UsuarioController extends Controller
     {
         $client = new Client([
 
-            // 'base_uri' => 'http://192.81.219.5/',
-            'base_uri' => 'http://localhost/wsminkayg/public/',
+            'base_uri' => 'http://192.81.219.5/',
+            // 'base_uri' => 'http://localhost/wsminkayg/public/',
 
         ]);
 
@@ -29,8 +29,8 @@ class UsuarioController extends Controller
 
         $client = new Client([
 
-            // 'base_uri' => 'http://192.81.219.5/',
-            'base_uri' => 'http://localhost/wsminkayg/public/',
+            'base_uri' => 'http://192.81.219.5/',
+            // 'base_uri' => 'http://localhost/wsminkayg/public/',
 
         ]);
 
