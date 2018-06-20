@@ -14,6 +14,41 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <style type="text/css">
+
+
+#tilistob{
+    letter-spacing: 1px;
+    padding-bottom: 10px; 
+    font-weight: bold;
+}
+    #modalobs{
+        width: 600px;
+    }
+
+    #modpieobs{
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-top: none;
+    }
+
+    #modalcontobs{
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+    }
+
+    #modobsimg > img{
+        box-shadow:  0 5px 15px rgba(0,0,0,.2);
+    }
+
+    #cerrarmodobs:hover, #cerrarmodobs{
+    color:white;
+    opacity: 1}
+
+</style>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">

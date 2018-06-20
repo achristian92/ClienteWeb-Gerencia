@@ -4,41 +4,11 @@
 
 <div class="container">
 
-<style type="text/css">
-
-    .modal-sm{
-        width: 600px;
-        top: 100px
-    }
-
-    .modal-footer{
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        border-top: none;
-    }
-
-    .modal-content{
-        background-color: transparent;
-        box-shadow: none;
-        border: none;
-    }
-
-    div.modal-body > img{
-        box-shadow:  0 5px 15px rgba(0,0,0,.5)
-    }
-
-    .close:hover, .close{
-    color:white!important ;
-    opacity: 1}
-
-</style>
     <a class="btn btn-primary" href="{{ route('agencias.super') }}">
         << Regresar
     </a>
     <div class="row">
-        <h3 align="center" style="letter-spacing: 1px;padding-bottom: 10px; font-weight: bold;">
+        <h3 align="center" id="tilistob" >
             LISTA DE OBSERVACIONES
         </h3>
         <span style="margin bottom:50px; float: right; padding-bottom: 25px; padding-right: 20px">
@@ -77,18 +47,20 @@
                         <td class="celdaimg">
                         <img data-target="#modalimagen-{{ $age->idob }}" data-toggle="modal" height="70" src="{{ $age->ruta_imagen }}" style="cursor: pointer;" width="125">
             <div aria-hidden="true" aria-labelledby="mySmallModalLabel" class="modal fade" id="modalimagen-{{ $age->idob }}" role="dialog" style="opacity: 1; background-color: rgba(0,0,0,0.6);">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
+                    <div class="modal-dialog modal-sm" id="modalobs">
+                        <div class="modal-content" id="modalcontobs">
                               <div class="modal-header" style="border-bottom:0px; padding-right:0px; margin-right:-15px; padding-bottom:0px">
-                                <h5 class="modal-title">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; font-size:30px">
+                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; font-size:35px" id="cerrarmodobs">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                                <div class="modal-body">
+                                <div class="modal-body" id="modobsimg">
+                                    
                                 <img src="{{ $age->ruta_imagen }}" height="400" width="600">
+                                
                                 </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer" id="modpieobs">
                                     IMAGEN PERTENECIENTE AL AREA DE {{ $age->nombre_modulo }} 
                             </div>
                       </div>
