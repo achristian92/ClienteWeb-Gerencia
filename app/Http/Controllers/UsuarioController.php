@@ -11,28 +11,52 @@ class UsuarioController extends Controller
         $client = new Client([
 
             'base_uri' => 'http://192.81.219.5/',
-            // 'base_uri' => 'http://localhost/wsminkayg/public/',
 
         ]);
 
         $response = $client->request('GET', 'api/usuarios');
         // $response->headers->set('Content-Type', 'application/json');
 
-        $indexusu = json_decode($response->getBody()->getContents());
+        $getall = json_decode($response->getBody()->getContents());
         // return $response;
-
+        $indexusu = $getall->data;
         return view('users.users', compact('indexusu'));
+
+    }
+     public function we_create()
+    {
+        return view('users.create_user');
+
+    }
+     public function we_store(Request $request)
+    {
+        $valoraccweb  = ($request->accweb == 1) ? "SI" : "NO";
+        $valoraccapp = ($request->accapp == 1) ? "SI" : "NO";
+        
+        $client = new Client(['base_uri' => 'http://192.81.219.5/',]);
+        
+        $response = $client->request('POST', 'api/usuarios', [  
+        'form_params' => [
+        'name' => $request->name,
+        'apellidos' => $request->apellidos,
+        'telefono' => $request->telefono,
+        'email' => $request->email,
+        'password' => bcrypt($request->password),
+        'accesoWeb' => $valoraccweb,
+        'accesoApp' => $valoraccapp,
+        ]
+        ]);
+     
+         $age_su   = json_decode($response->getBody()->getContents());
+       
+        
+         return  redirect()->route('usuario.index')->with('mensajeuser','Se Registro correctamente un nuevo Usuario');
 
     }
     public function we_edit($id)
     {
 
-        $client = new Client([
-
-            'base_uri' => 'http://192.81.219.5/',
-            // 'base_uri' => 'http://localhost/wsminkayg/public/',
-
-        ]);
+        $client = new Client(['base_uri' => 'http://192.81.219.5/',]);
 
         $response = $client->request('GET', 'api/usuarios/' . $id);
         //Necesitas desempaquetar el objecto
@@ -51,25 +75,11 @@ class UsuarioController extends Controller
     public function we_update()
     {
 
-        // $client = new GuzzleHttp\Client();
-        $client = new Client([
-
-            // 'base_uri' => 'http://192.81.219.5/',
-            'base_uri' => 'http://localhost/wsminkayg/public/',
-
-        ]);
-        $response = $client->request('POST', 'api/usuarios/', [
-
-            'field_name'  => 'abc',
-            'other_field' => '123',
-
-        ]);
-
+       
     }
     public function we_destroy($id)
     {
 
-        // return view('users.edit_user');
 
     }
 }

@@ -30,7 +30,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/agencias-supervisadas', 'RutasPanelController@observa')->name('agencias.super');
 
@@ -38,8 +37,8 @@ Route::get('agencia-observaciones/{cod}', 'RutasPanelController@observashow')->n
 
 //-------------USER-----------------------------------------------------
 Route::get('usuarios/index', ['as' => 'usuario.index', 'uses' => 'UsuarioController@we_index']);
-Route::get('Listausuarios/create/newuser', ['as' => 'usuario.create', 'uses' => 'UsuarioController@we_create']);
-Route::post('usuario', ['as' => 'usuario.store', 'uses' => 'UsuarioController@we_store']);
+Route::get('usuarios/create', ['as' => 'usuario.create', 'uses' => 'UsuarioController@we_create']);
+Route::post('usuario/store', ['as' => 'usuario.store', 'uses' => 'UsuarioController@we_store']);
 Route::get('Usuario/{id}', ['as' => 'usuario.edit', 'uses' => 'UsuarioController@we_edit']);
 Route::post('usuario', ['as' => 'usuario.update', 'uses' => 'UsuarioController@we_update']);
 Route::delete('usuario/{id}', ['as' => 'usuario.destroy', 'uses' => 'UsuarioController@we_destroy']);

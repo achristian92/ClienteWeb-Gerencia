@@ -1,22 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Update Usuario
-        </title>
-    </head>
-    <script src="//code.jquery.com/jquery-1.11.3.min.js">
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-ObtenerTipoZona();
-ObtenerAgencia(); 
-ObtenerTipoUsuario();
 
-});
-    </script>
     <body>
         <div class="container">
             <div class="row">
@@ -38,7 +22,7 @@ ObtenerTipoUsuario();
                     <a class="btn btn-primary" href="{{ route('usuario.index') }}">
                     << Regresar
                     </a>
-                    <form action="{{ route('usuario.update') }}" method="post">
+                    <form action="{{ route('usuario.update') }}" method="POST">
                         {{ csrf_field() }}
              {{--    {!! method_field('PUT') !!} --}}
                         <h3 style="font-weight: bold; margin-top: -10px; margin-bottom: 20px">
@@ -48,7 +32,7 @@ ObtenerTipoUsuario();
                         </h3>
                         <div class="row">
                             <div class="col-sm-offset-2 col-sm-3">
-                                {{ csrf_field() }}
+                             
                                 <div class="form-group" id="nombres">
                                     <label for="name">
                                         NOMBRES:
@@ -117,78 +101,5 @@ ObtenerTipoUsuario();
             </div>
         </div>
     </body>
-</html>
-@stop
-{{--
-<script type="text/javascript">
-    function ObtenerTipoZona() {
-    $('#cboZonaVehiculo').empty();
-    $.ajax({
-        async: false,
-        type: 'GET',
-        url: '../../getTipoZonasJSON',
-        data: {},
-        dataType: 'json',
-        success: function(data) {
-            $('#cboZonaVehiculo').append('<option value="">::Seleccionar::</option>');
-            $.each(data, function(i, value) {
-                $('#cboZonaVehiculo').append('<option value="' + value.idtipo_zona + '">' + value.nombre_zona + '</option>');
-            });
-            $('select[name=cboZonaVehiculo]').val({{ $usuarios->idtipo_zona }}); 
-       
-        },
-        error: function(jqXHR, status, err) {
-            alert("Local error callback.");
-        }
-    });
-}
-function ObtenerAgencia() {
-    var CodigoZona = $('#cboZonaVehiculo').val();
-    if (CodigoZona != "") {
-        $('#idagencia').empty();
-        $.ajax({
-            async: false,
-            type: 'GET',
-            url: '../../getAgenciasJSON/' + CodigoZona,
-            data: {},
-            dataType: 'json',
-            success: function(data) {
-                $('#idagencia').append('<option value="">::Seleccionar::</option>');
-                $.each(data, function(i, value) {
-                    $('#idagencia').append('<option value="' + value.idagencia + '">' + value.nombre_agencia + '</option>');
-                });
-                $('select[name=idagencia]').val({{ $usuarios->idagencia }});  
-              
-            },
-            error: function(jqXHR, status, err) {
-                alert("Local error callback.");
-            }
 
-        });
-    } else {
-        $('#idagencia').empty();
-        $('#idagencia').append('<option value="">::Seleccionar::</option>');
-    }
-}
-function ObtenerTipoUsuario() {
-    $('#idrol').empty();
-    $.ajax({
-        async: false,
-        type: 'GET',
-        url: '../../getTipoUsuario',
-        data: {},
-        dataType: 'json',
-        success: function(data) {
-            $('#idrol').append('<option value="">::Seleccionar::</option>');
-            $.each(data, function(i, value) {
-                $('#idrol').append('<option value="' + value.idrol + '">' + value.nombre_roles + '</option>');
-            });
-        $('select[name=idrol]').val({{ $usuarios->idrol }});  
-        },
-        error: function(jqXHR, status, err) {
-            alert("Local error callback.");
-        }
-    });
-}
-</script>
---}}
+@stop
