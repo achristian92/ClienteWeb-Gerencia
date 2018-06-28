@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ClientException;
+
 class UsuarioController extends Controller
 {
     public function we_index()
@@ -58,24 +62,49 @@ class UsuarioController extends Controller
 
         $client = new Client(['base_uri' => 'http://192.81.219.5/',]);
 
-        $response = $client->request('GET', 'api/usuarios/' . $id);
-        //Necesitas desempaquetar el objecto
-        //El resultado de la funcion json_decode() devuelve un array de una posición;
-        //Posteriormente puedes crear un arreglo vacío y asignarle en el indice 'user' el objeto $user
-        // $data = [];
-        // $data['user'] = $user
+        $response = $client->request('GET', 'api/usuarios/'.$id);       
+        $user2 = json_decode($response->getBody()->getContents());
+        //      $user  = $user2->data;
+        $statuscode = $response->getStatusCode();
+        if (404 === $statuscode) {
+        return redirect()->route('usuario.index')->with('mensajeuser',"No se Encontro el Usuario");  
 
-        $user = json_decode($response->getBody()->getContents())[0];
-        return view('users.edit_user', compact('user'));
-
-        // $data = [];
-        // $data['user'] = $user;
-
+        }
+        else {
+        throw new MyException("Invalid response from api...");
+       }
+       // try{
+       //    if($user2->status === "ok"){              
+       //      $user  = $user2->data;
+       //      return view('users.edit_user', compact('user'));
+       //      }
+       // }catch (ClientException $e){
+       //  echo Psr7\str($e->getRequest());
+       //  echo Psr7\str($e->getResponse());
+       // }
+       //   return redirect()->route('usuario.index')->with('mensajeuser',"No se Encontro el Usuario");  
     }
-    public function we_update()
-    {
-
+    public function we_update(Request $request , $id)
+    {  
+        $valoraccweb  = ($request->accweb == 1) ? "SI" : "NO";
+        $valoraccapp = ($request->accapp == 1) ? "SI" : "NO";
+        
        
+        $client = new Client(['base_uri' => 'http://192.81.219.5/',]);
+        $response = $client->request('put', 'api/usuarios/'.$id, [  
+        'form_params' => [
+        'name'      => $request->name,
+        'apellidos' => $request->apellidos,
+        'telefono'  => $request->telefono,
+        'email'     => $request->email,
+        'password'  => $request->password,
+        'accesoWeb' => $valoraccweb,
+        'accesoApp' => $valoraccapp,
+        ]
+        ]);
+
+         $age_su   = json_decode($response->getBody()->getContents());
+         return  redirect()->route('usuario.index')->with('mensajeuser','Se Actualizo correctamente el usuario');
     }
     public function we_destroy($id)
     {

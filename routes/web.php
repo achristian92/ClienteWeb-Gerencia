@@ -40,6 +40,6 @@ Route::get('usuarios/index', ['as' => 'usuario.index', 'uses' => 'UsuarioControl
 Route::get('usuarios/create', ['as' => 'usuario.create', 'uses' => 'UsuarioController@we_create']);
 Route::post('usuario/store', ['as' => 'usuario.store', 'uses' => 'UsuarioController@we_store']);
 Route::get('Usuario/{id}', ['as' => 'usuario.edit', 'uses' => 'UsuarioController@we_edit']);
-Route::post('usuario', ['as' => 'usuario.update', 'uses' => 'UsuarioController@we_update']);
+Route::put('usuarioupdate/{id}', ['as' => 'usuario.update', 'uses' => 'UsuarioController@we_update']);
 Route::delete('usuario/{id}', ['as' => 'usuario.destroy', 'uses' => 'UsuarioController@we_destroy']);
 //-------------------------------------------------------------------------------------------------------------

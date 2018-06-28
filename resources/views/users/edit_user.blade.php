@@ -22,10 +22,11 @@
                     <a class="btn btn-primary" href="{{ route('usuario.index') }}">
                     << Regresar
                     </a>
-                    <form action="{{ route('usuario.update') }}" method="POST">
+                       
+                    <form action="{{ route('usuario.update', $user->id) }}" method="POST">
                         {{ csrf_field() }}
-             {{--    {!! method_field('PUT') !!} --}}
-                        <h3 style="font-weight: bold; margin-top: -10px; margin-bottom: 20px">
+                        {!! method_field('PUT') !!}
+                         <h3 style="font-weight: bold; margin-top: -10px; margin-bottom: 20px">
                             <center>
                                 ACTUALIZAR USUARIO
                             </center>
@@ -60,7 +61,7 @@
                                     <label for="name">
                                         APELLIDOS:
                                     </label>
-                                    <input class="form-control" id="apellido" name="apellido" required="" type="text" value="{{ $user->apellidos }}">
+                                    <input class="form-control" id="apellidos" name="apellidos" required="" type="text" value="{{ $user->apellidos }}">
                                     </input>
                                 </div>
                                 <div class="form-group">
@@ -75,14 +76,14 @@
                                         ACCESOS
                                     </label>
                                     <div class="form-check form-check-inline">
-                                        <input @if($user->accesoWeb  == 1) checked="" @endif class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1">
+                                        <input @if($user->accesoWeb  == "SI") checked="" @endif class="form-check-input" name="accweb" id="accweb" type="checkbox" value="1">
                                             <label class="form-check-label" for="inlineCheckbox1">
                                                 PAGINA WEB
                                             </label>
                                         </input>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input @if($user->accesoApp  == 1) checked="" @endif class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2">
+                                        <input @if($user->accesoApp  == "SI") checked="" @endif class="form-check-input" name="accapp" id="accapp" type="checkbox" value="1">
                                             <label class="form-check-label" for="inlineCheckbox2">
                                                 APLICATIVO MOVIL 
                                             </label>
@@ -97,6 +98,7 @@
                             </button>
                         </center>
                     </form>
+                    
                 </div>
             </div>
         </div>
