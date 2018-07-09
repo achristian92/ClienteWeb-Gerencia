@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <div class="navbar-header" style="display: inline-block;">
                     <div class="navbar-brand" style="padding: 5px 5px">
-                        <img src="{{ asset('img/logomibanconav.png') }}">
+                        <img src="{{ asset('img/minkayblanco.png') }}" style="width: 65%">
                         </img>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     </h1>
                     <div class="col-sm-6" style="padding-top: 25px">
                         <center>
-                            <img id="imagenlogomb" src="{{ asset('img/mibancoverde.png') }}">
+                            <img id="imagenlogomb" src="{{ asset('img/imgpre.jpg') }}">
                             </img>
                         </center>
                     </div>
@@ -45,9 +45,15 @@
                         <h3>
                             Observaciones de Agencias - Gerencia
                         </h3>
-                        <h4><p>
-                            Controla todas las observaciones encontradas en las agencias,
-                            reportandando para mejorar su infraestructura , etc.
+                        <h4 align="center">
+                            <p style="width: 75%" align="justify">
+                                Realiza un control de las observaciones encontradas en las agencias,
+                                reportando los incidentes para la mejora de la infraestructura.
+                                
+                            </p>
+
+                            <p style="width: 75%" align="justify">
+                                El software le brindará total confiabilidad al usuario.
                                 
                             </p>
                         </h4>

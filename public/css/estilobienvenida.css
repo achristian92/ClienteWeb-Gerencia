@@ -11,11 +11,11 @@ background-color:#fff
 }
 
     nav.navbar.navbar-default{
-        background-color: rgb(3,133,45);
+        background-color: #06b1de;
         margin-bottom: -21px;
         padding: none;
         border-radius: 0px;
-        border-color:  #4a9263;
+        border-color:   #06b1de;
     }
 
     ul.nav.navbar-nav{
@@ -106,12 +106,12 @@ background-color:#fff
         }
 
 .btn-primary, .btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.btn-primary.dropdown-toggle, .btn-primary.focus, .btn-primary:focus, .btn-primary:active:focus{
-    background-color: #03852d;
-    border-color: #03852d;
+    background-color: 06b1de;
+    border-color: 06b1de;
 }
 
 #imagenlogomb{
-    width: 85%;
+    width: 95%;
     height: auto;
 }
 
