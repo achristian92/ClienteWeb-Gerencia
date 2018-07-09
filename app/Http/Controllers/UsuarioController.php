@@ -66,23 +66,17 @@ class UsuarioController extends Controller
         $user2 = json_decode($response->getBody()->getContents());
         //      $user  = $user2->data;
         $statuscode = $response->getStatusCode();
-        if (404 === $statuscode) {
-        return redirect()->route('usuario.index')->with('mensajeuser',"No se Encontro el Usuario");  
-
-        }
-        else {
-        throw new MyException("Invalid response from api...");
+  
+       try{
+          if($user2->status === "ok"){              
+            $user  = $user2->data;
+            return view('users.edit_user', compact('user'));
+            }
+       }catch (ClientException $e){
+        echo Psr7\str($e->getRequest());
+        echo Psr7\str($e->getResponse());
        }
-       // try{
-       //    if($user2->status === "ok"){              
-       //      $user  = $user2->data;
-       //      return view('users.edit_user', compact('user'));
-       //      }
-       // }catch (ClientException $e){
-       //  echo Psr7\str($e->getRequest());
-       //  echo Psr7\str($e->getResponse());
-       // }
-       //   return redirect()->route('usuario.index')->with('mensajeuser',"No se Encontro el Usuario");  
+         return redirect()->route('usuario.index')->with('mensajeuser',"No se Encontro el Usuario");  
     }
     public function we_update(Request $request , $id)
     {  

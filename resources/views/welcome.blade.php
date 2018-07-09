@@ -43,17 +43,12 @@
                     </div>
                     <div class="col-sm-6">
                         <h3>
-                            Gestiona tus activos
+                            Observaciones de Agencias - Gerencia
                         </h3>
-                        <h4>
-                            <p class="subtextop" id="primerp">
-                                ¡ Olvídate del papel !
-                            </p>
-                            <p class="descri">
-                                Gestiona los activos de tu organización de manera transparente, óptima y segura.
-                            </p>
-                            <p class="descri">
-                                Ten el control eficiente y eficaz de tu supervisión con seguridad.
+                        <h4><p>
+                            Controla todas las observaciones encontradas en las agencias,
+                            reportandando para mejorar su infraestructura , etc.
+                                
                             </p>
                         </h4>
                         <div class="botoningreso">
